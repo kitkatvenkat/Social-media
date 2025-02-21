@@ -20,7 +20,7 @@ const Navbar = () => {
 
         {/* Center - User Name */}
         <div className="nav-center">
-          {user ? <span className="username">{user.username}</span> : null}
+          {user ? <span className="username">{user.username}</span> : "Social Media"}
         </div>
 
         {/* Right Side - Post & Logout */}

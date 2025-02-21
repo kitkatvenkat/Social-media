@@ -1,9 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../CSS/Register.css"; // Import the CSS file
 
 const Register = () => {
-  const [formData, setFormData] = useState({ username: "", email: "", password: "" });
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -22,14 +28,39 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Register</button>
-      </form>
+    <div className="body">
+    <div className="register-container">
+      <div className="register-box">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+            required
+          />
+          <button className="register-button" type="submit">Register</button>
+        </form>
+        <p className="login-link">
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </div>
+    </div>
     </div>
   );
 };
