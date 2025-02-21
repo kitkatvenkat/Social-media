@@ -1,0 +1,183 @@
+/* Container for all posts */
+.post-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+  }
+  
+  /* Each Post Card */
+  .post-card {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  /* Hover effect */
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Username */
+  .post-username {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Post Content */
+  .post-content {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  /* Post Image */
+  .post-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Like & Comment Buttons Container */
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Like & Comment Button Styling */
+  .like-button,
+  .comment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    padding: 8px 12px;
+    border: none;
+  }
+  
+  /* Like Button */
+  .like-button {
+    background: #ff4d4d;
+    color: white;
+  }
+  
+  .like-button:hover {
+    background: #ff3333;
+    transform: scale(1.05);
+  }
+  
+  /* Comment Button */
+  .comment-button {
+    background: #4a90e2;
+    color: white;
+  }
+  
+  .comment-button:hover {
+    background: #3578e5;
+    transform: scale(1.05);
+  }
+  
+  /* Comments Section */
+  .comments-section {
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  /* Comment Text */
+  .comment-text {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 5px 0;
+  }
+  
+  /* Comment Input */
+  .comment-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 5px;
+    transition: border 0.3s ease;
+  }
+  
+  /* Comment Input Focus */
+  .comment-input:focus {
+    border: 1px solid #4a90e2;
+    outline: none;
+  }
+
+  /* Comments Section */
+.comments-section {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Comment Input */
+  .comment-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 8px;
+    transition: border 0.3s ease, opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  
+  /* Show input smoothly */
+  .comments-section input {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .post-list-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .post-list-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .post-card {
+      width: 100%;
+    }
+  
+    .like-button,
+    .comment-button {
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
+  
+    .comment-input {
+      font-size: 0.9rem;
+    }
+  }
+  

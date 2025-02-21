@@ -1,0 +1,124 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #333, #555);
+    color: white;
+    padding: 15px 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Left - Hamburger Icon */
+  .nav-left .menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-left .menu-icon:hover {
+    transform: rotate(90deg);
+  }
+  
+  /* Center - Username */
+  .nav-center {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .username {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  /* Right Side */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Buttons */
+  .post-button,
+  .logout-button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Post Button Hover */
+  .post-button:hover {
+    background: #ff3333;
+    transform: scale(1.05);
+  }
+  
+  /* Logout Button */
+  .logout-button {
+    background: #444;
+  }
+  
+  .logout-button:hover {
+    background: #666;
+    transform: scale(1.05);
+  }
+  
+  /* Logout Icon */
+  .logout-icon {
+    font-size: 1.2rem;
+  }
+  
+  /* Links */
+  .login-link,
+  .register-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-link:hover,
+  .register-link:hover {
+    background: #ffcc00;
+    color: black;
+    transform: scale(1.05);
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .nav-right {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      padding: 10px;
+    }
+  
+    .nav-right.open {
+      display: flex;
+    }
+  
+    .nav-right button {
+      width: 100%;
+    }
+  }
+  
