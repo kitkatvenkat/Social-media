@@ -18,9 +18,9 @@ This is a **MERN Stack** Social Media project where users can post, like, dislik
 
 ## 📸 Screenshots
 ![Home Page](./screenshots/Homepage.png)  
-![Post Page](./screenshots/post.png)  
-![Like & Comment](./screenshots/like-comment.png)  
-![Login Page](./screenshots/login.png)  
+![Post Page](./screenshots/coment&mobileview.png)  
+![Like & Comment](./screenshots/Logoutpage.png)  
+  
 
 ## 📂 Setup & Installation
 ```bash
