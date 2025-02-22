@@ -17,7 +17,7 @@ This is a **MERN Stack** Social Media project where users can post, like, dislik
 - **Hosting:** (Mention if deployed)
 
 ## 📸 Screenshots
-![Home Page](./screenshots/home.png)  
+![Home Page](./image/home.jpg)  
 ![Post Page](./screenshots/post.png)  
 ![Like & Comment](./screenshots/like-comment.png)  
 ![Login Page](./screenshots/login.png)  
