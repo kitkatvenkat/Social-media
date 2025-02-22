@@ -30,7 +30,10 @@ git clone https://github.com/kitkatvenkat/Social-media.git
 # Navigate to the project directory
 cd Social-media
 
-# Install dependencies
+# Navigate to frontend folder
+cd frontend
+
+# Install frontend dependencies
 npm install
 
 # Start the frontend
@@ -43,4 +46,4 @@ cd backend
 npm install
 
 # Start the backend server
-npm run server
+npm start
