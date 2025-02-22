@@ -1,67 +1,114 @@
-/* Form Container */
-.post-form {
-    background: white;
+/* Modal Background */
+.post-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Show Modal */
+.post-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Content Box */
+.post-modal-content {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-modal:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+/* Textarea */
+.post-form textarea {
+  width: 100%;
+  height: 120px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+  resize: none; /* Prevents textarea from resizing */
+}
+
+.post-form textarea:focus {
+  border: 2px solid #ff6600;
+}
+
+/* File Input */
+.post-form input[type="file"] {
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 10px 0;
+}
+
+/* Submit Button */
+.post-form button {
+  background: linear-gradient(to right, #ff6600, #ff3300);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.post-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.post-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .post-modal-content {
+    width: 90%;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
   }
-  
-  /* Textarea */
-  .post-form textarea {
-    width: 100%;
-    height: 100px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-    transition: border 0.3s ease;
-  }
-  
-  .post-form textarea:focus {
-    border: 2px solid #ff6600;
-  }
-  
-  /* File Input */
-  .post-form input[type="file"] {
-    font-size: 14px;
-    padding: 5px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  /* Submit Button */
+
   .post-form button {
-    background: linear-gradient(to right, #ff6600, #ff3300);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
   }
-  
-  .post-form button:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .post-form {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .post-form button {
-      font-size: 16px;
-    }
-  }
-  
+}

@@ -32,10 +32,14 @@ router.post("/", verifyToken, upload.single("image"), async (req, res) => {
   try {
     const { content } = req.body;
     const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
-    
-    const newPost = new Post({ username: req.user.username, content, image: imageUrl });
-    await newPost.save();
 
+    const newPost = new Post({
+      username: req.user.username,
+      content,
+      image: imageUrl,
+    });
+
+    await newPost.save();
     res.status(201).json(newPost);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -47,6 +51,18 @@ router.post("/like/:id", verifyToken, async (req, res) => {
   const post = await Post.findById(req.params.id);
   if (post) {
     post.likes += 1;
+    await post.save();
+    res.json(post);
+  } else {
+    res.status(404).json({ error: "Post not found" });
+  }
+});
+
+// **Dislike a Post (Protected)**
+router.post("/dislike/:id", verifyToken, async (req, res) => {
+  const post = await Post.findById(req.params.id);
+  if (post) {
+    post.dislikes += 1;
     await post.save();
     res.json(post);
   } else {

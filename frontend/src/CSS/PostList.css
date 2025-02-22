@@ -1,183 +1,181 @@
 /* Container for all posts */
 .post-list-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-  }
-  
-  /* Each Post Card */
-  .post-card {
-    width: 100%;
-    max-width: 400px;
-    background: linear-gradient(135deg, #ffffff, #f8f8f8);
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-  }
-  
-  /* Hover effect */
-  .post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Username */
-  .post-username {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  /* Post Content */
-  .post-content {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  /* Post Image */
-  .post-image {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Like & Comment Buttons Container */
-  .post-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  /* Like & Comment Button Styling */
-  .like-button,
-  .comment-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    padding: 8px 12px;
-    border: none;
-  }
-  
-  /* Like Button */
-  .like-button {
-    background: #ff4d4d;
-    color: white;
-  }
-  
-  .like-button:hover {
-    background: #ff3333;
-    transform: scale(1.05);
-  }
-  
-  /* Comment Button */
-  .comment-button {
-    background: #4a90e2;
-    color: white;
-  }
-  
-  .comment-button:hover {
-    background: #3578e5;
-    transform: scale(1.05);
-  }
-  
-  /* Comments Section */
-  .comments-section {
-    margin-top: 15px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-  
-  /* Comment Text */
-  .comment-text {
-    font-size: 0.9rem;
-    color: #444;
-    margin: 5px 0;
-  }
-  
-  /* Comment Input */
-  .comment-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-top: 5px;
-    transition: border 0.3s ease;
-  }
-  
-  /* Comment Input Focus */
-  .comment-input:focus {
-    border: 1px solid #4a90e2;
-    outline: none;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
 
-  /* Comments Section */
-.comments-section {
-    margin-top: 10px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-    transition: all 0.3s ease-in-out;
+/* Each Post Card */
+.post-card {
+  width: 100%;
+  max-width: 350px;
+  background: linear-gradient(135deg, #ffffff, #f6f6f6);
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Post Image with Modern Look */
+.post-image {
+  width: 100%;
+  height: 320px; 
+  object-fit: cover; 
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+/* Image Hover Effect */
+.post-image:hover {
+  transform: scale(1.03);
+}
+
+/* Username */
+.post-username {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Profile Icon Styling */
+.profile-icon {
+  font-size: 40px; 
+  color: #555; 
+  margin-right: 10px;
+}
+
+/* Post Content */
+.post-content {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Post Actions Container */
+.post-actions {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+/* Action Buttons (Like, Dislike, Comment) */
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Like Button */
+.like-button {
+  color: #e74c3c;
+}
+
+.like-button:hover {
+  transform: scale(1.1);
+}
+
+/* Dislike Button */
+.dislike-button {
+  color: #555;
+}
+
+.dislike-button:hover {
+  transform: scale(1.1);
+}
+
+/* Comment Button */
+.comment-button {
+  color: #4a90e2;
+}
+
+.comment-button:hover {
+  transform: scale(1.1);
+}
+/* Comment Input Container */
+.comment-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 8px;
+}
+
+/* Comment Input */
+.comment-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #4a90e2;
+  background: #e3f2fd;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.comment-input::placeholder {
+  color: #4a90e2;
+}
+
+.comment-input:focus {
+  background: #bbdefb;
+  border-color: #1e88e5;
+}
+
+/* Send Button */
+.send-button {
+  /* background: #4a90e2; */
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+.send-button:hover {
+  background: #b1d1ed;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .post-actions {
+    justify-content: space-around; 
   }
-  
-  /* Comment Input */
-  .comment-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-top: 8px;
-    transition: border 0.3s ease, opacity 0.3s ease-in-out;
-    opacity: 0;
-    transform: translateY(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .post-list-container {
+      grid-template-columns: repeat(2, 1fr); 
   }
-  
-  /* Show input smoothly */
-  .comments-section input {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .post-list-container {
+      grid-template-columns: repeat(1, 1fr); 
   }
-  
-  
-  /* Responsive Design */
-  @media (max-width: 900px) {
-    .post-list-container {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .post-list-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .post-card {
-      width: 100%;
-    }
-  
-    .like-button,
-    .comment-button {
-      font-size: 0.9rem;
-      padding: 6px 10px;
-    }
-  
-    .comment-input {
-      font-size: 0.9rem;
-    }
-  }
-  
+}
